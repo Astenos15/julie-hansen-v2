@@ -22,6 +22,9 @@ body {
     line-height: 1;
     letter-spacing: -6px;
   }
+  @include respond(phone) {
+    font-size: 8.4rem;
+  }
 }
 
 .heading-subheading {

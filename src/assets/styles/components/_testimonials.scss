@@ -1,4 +1,8 @@
 .section-testimonials {
+  @include respond(phone) {
+    padding: 0;
+  }
+
   h2 {
     font-size: 3rem;
   }
@@ -43,7 +47,7 @@
     position: relative;
 
     @include respond(phone) {
-      padding: 4rem;
+      padding: 9.6rem 4rem;
     }
 
     &-icon {
@@ -56,7 +60,7 @@
 
       @include respond(phone) {
         font-size: 4rem;
-        top: 2%;
+        top: 5%;
       }
     }
   }

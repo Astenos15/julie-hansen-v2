@@ -1,0 +1,16 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilitites";
+
+@import "components/hero";
+@import "components/link-btn";
+@import "components/about";
+@import "components/team";
+@import "components/communities";
+@import "components/testimonials";
+
+@import "layout/grid";

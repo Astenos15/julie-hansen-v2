@@ -1,0 +1,84 @@
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes alternateText {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0);
+    content: "Building sales. managing relationships.";
+  }
+  35% {
+    opacity: 0;
+    transform: translateY(-20px);
+    content: "";
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+    content: "Professional, capable and caring";
+  }
+
+  65% {
+    opacity: 0;
+    transform: translateY(-20px);
+    content: "";
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+    content: "30+ Years Serving HomeBuyers and Sellers";
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+    content: "";
+  }
+}
+
+@keyframes slowSpinner {
+  0% {
+    transform: rotateY(0deg);
+    transform-origin: 50% 50%;
+  }
+  100% {
+    transform: rotateY(-360deg);
+    transform-origin: 50% 50%;
+  }
+}
+
+.animate {
+  animation: moveInTop 1s linear;
+  animation-fill-mode: backwards;
+}
+.animate-text {
+  animation: alternateText 1s linear;
+  animation-fill-mode: backwards;
+}
+.animate-spinner {
+  animation: moveInTop 1s linear, slowSpinner 5s linear infinite;
+  animation-fill-mode: backwards;
+}
+
+.delayShortest {
+  animation-delay: 200ms !important;
+}
+
+.delayShort {
+  animation-delay: 300ms !important;
+}
+.delayLong {
+  animation-delay: 500ms !important;
+}

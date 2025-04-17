@@ -1,0 +1,35 @@
+.section-hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    filter: brightness(50%);
+  }
+
+  &__cta {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 200;
+    letter-spacing: 1.2px;
+    line-height: 1.5;
+
+    @include respond(phone) {
+      font-size: 2rem;
+    }
+  }
+
+  &__btn-box {
+    display: flex;
+    gap: 2rem;
+  }
+}

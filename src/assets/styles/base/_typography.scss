@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/*
+Typography System
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+WHITESPACE
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 12
+*/
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.heading-primary {
+  font-weight: 100;
+  font-size: 9.6rem;
+  letter-spacing: -10px;
+
+  @include respond(tab-port) {
+    line-height: 1;
+    letter-spacing: -6px;
+  }
+}
+
+.heading-subheading {
+  font-size: 2.4rem;
+  font-weight: 200;
+  position: relative;
+
+  @include respond(phone) {
+    font-size: 1.8rem;
+  }
+
+  &::after {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    content: "";
+    animation: alternateText 15s ease 0.1s infinite;
+  }
+}

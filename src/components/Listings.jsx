@@ -20,7 +20,7 @@ function Listings() {
 
   return (
     <div ref={ref} className="section-listings section-padding">
-      {listIndex >= 0 ? (
+      {listIndex ? (
         <ListingInfo listing={listing} onSet={setListIndex} />
       ) : (
         <div className="section-listings___box mb-lg">

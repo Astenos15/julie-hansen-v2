@@ -4,9 +4,9 @@ import { SiComma } from "react-icons/si";
 import { useInView } from "react-intersection-observer";
 
 function Testimonials() {
-  const [index, setIndex] = useState(0);
-  const testimonial = testimonials[index];
   const { ref, inView } = useInView();
+  const [index, setIndex] = useState(0);
+  const testimonial = testimonials.at(index);
 
   function handlePrevious() {
     if (index > 0) setIndex((index) => index - 1);

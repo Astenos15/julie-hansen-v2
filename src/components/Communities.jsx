@@ -4,12 +4,11 @@ import { useInView } from "react-intersection-observer";
 
 function Communities() {
   const { ref, inView } = useInView();
-  const [community, setCommunity] = useState(communities[0]);
-  const [isBtnActive, setIsBtnActive] = useState(communities[0].id);
+  const [index, setIndex] = useState(0);
+  const community = communities.at(index);
 
-  function handleClick(id, index) {
-    setCommunity(communities[index]);
-    setIsBtnActive(id);
+  function handleClick(index) {
+    if (index <= communities.length - 1) setIndex(index);
   }
 
   return (
@@ -54,11 +53,11 @@ function Communities() {
           <button
             key={item.id}
             className={
-              isBtnActive === item.id
+              community.id === item.id
                 ? "section-communities__btn active-btn"
                 : "section-communities__btn"
             }
-            onClick={() => handleClick(item.id, i)}
+            onClick={() => handleClick(i)}
           >
             {item.title}
           </button>

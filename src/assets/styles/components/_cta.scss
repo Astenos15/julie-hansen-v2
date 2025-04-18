@@ -1,0 +1,43 @@
+.section-cta {
+  color: var(--color-text-light);
+  &__grid {
+    &-item {
+      background-color: var(--color-primary-dark);
+      img {
+        width: 100%;
+        filter: brightness(80%);
+      }
+      h1 {
+        font-size: 6.4rem;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: -5px;
+        @include respond(phone) {
+          font-size: 4.8rem;
+          letter-spacing: -3px;
+        }
+      }
+      h2 {
+        font-size: 4rem;
+        font-weight: 400;
+        color: #f7f7f7;
+        @include respond(phone) {
+          font-size: 3rem;
+        }
+      }
+
+      p {
+        font-size: 1.8rem;
+        letter-spacing: 1.2px;
+        line-height: 1.8;
+      }
+
+      &--text {
+        padding: 9.6rem;
+        @include respond(phone) {
+          padding: 9.6rem 4rem;
+        }
+      }
+    }
+  }
+}

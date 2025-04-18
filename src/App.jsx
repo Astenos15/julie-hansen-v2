@@ -6,6 +6,9 @@ import AboutList from "./components/AboutList";
 import Team from "./components/Team";
 import Communities from "./components/Communities";
 import Testimonials from "./components/Testimonials";
+import CallToAction from "./components/CallToAction";
+import FooterTextArea from "./components/FooterTextArea";
+import FooterFormArea from "./components/FooterFormArea";
 
 function App() {
   return (
@@ -18,8 +21,12 @@ function App() {
         <Team />
         <Communities />
         <Testimonials />
+        <CallToAction />
       </Main>
-      <Footer></Footer>
+      <Footer>
+        <FooterFormArea />
+        <FooterTextArea />
+      </Footer>
     </>
   );
 }

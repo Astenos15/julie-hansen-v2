@@ -1,0 +1,100 @@
+.section-footer {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  letter-spacing: 1.2px;
+  column-gap: 2rem;
+
+  h4 {
+    text-transform: capitalize;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__contact {
+    &--link {
+      display: flex;
+      flex-direction: column;
+
+      a:link,
+      a:visited {
+        display: inline-block;
+        align-self: flex-start;
+        color: var(--color-text-dark);
+        text-decoration: none;
+        padding: 0.1rem 0.5rem;
+        border-bottom: 1px solid var(--color-text-dark);
+        background: linear-gradient(
+          120deg,
+          transparent 0%,
+          transparent 50%,
+          var(--color-primary-dark) 50%
+        );
+        background-size: 220%;
+        transition: all 0.5s;
+      }
+      a:hover {
+        color: var(--color-text-light);
+        transform: translateY(-4px);
+        background-position: 100%;
+        box-shadow: var(--shadow-dark);
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    &-icon-box {
+      margin-top: auto;
+      display: flex;
+      gap: 4rem;
+
+      img {
+        @include respond(phone) {
+          height: 6.4rem;
+          margin-bottom: 4rem;
+        }
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      input {
+        border: none;
+        background: none;
+        font-size: 1.8rem;
+        border-bottom: 2px solid var(--color-primary-dark);
+        padding: 1rem 4rem 1rem 0.5rem;
+        outline: none;
+      }
+
+      button {
+        border: none;
+        background: none;
+        font-size: 1.8rem;
+        text-transform: capitalize;
+        letter-spacing: 1.2px;
+        background-color: var(--color-text-dark);
+        color: var(--color-text-light);
+        padding: 1rem 4rem;
+        cursor: pointer;
+        transition: var(--transition);
+
+        &:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--shadow-dark);
+        }
+        &:active {
+          transform: translateY(0);
+          box-shadow: var(--shadow-light);
+        }
+      }
+    }
+  }
+}

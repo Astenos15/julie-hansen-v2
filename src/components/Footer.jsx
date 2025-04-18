@@ -1,5 +1,9 @@
 function Footer({ children }) {
-  return <footer>{children}</footer>;
+  return (
+    <footer className="section-footer section-padding grid grid-2-cols">
+      {children}
+    </footer>
+  );
 }
 
 export default Footer;

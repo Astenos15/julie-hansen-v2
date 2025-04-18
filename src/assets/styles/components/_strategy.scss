@@ -5,6 +5,10 @@
 
   .title {
     text-align: center;
+
+    @include respond(phone) {
+      text-align: left;
+    }
     h4 {
       font-weight: 400;
     }

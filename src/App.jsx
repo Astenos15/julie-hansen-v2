@@ -10,6 +10,7 @@ import CallToAction from "./components/CallToAction";
 import FooterTextArea from "./components/FooterTextArea";
 import FooterFormArea from "./components/FooterFormArea";
 import Strategy from "./components/Strategy";
+import Listings from "./components/Listings";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Team />
         <Communities />
         <Testimonials />
+        <Listings />
         <CallToAction />
       </Main>
       <Footer>

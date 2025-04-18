@@ -20,7 +20,7 @@ function Team() {
         </div>
         <div className="section-team__text-box">
           <p className={inView ? "animate delayShortest" : "hidden"}>
-            Experienced and Skilled Realtor
+            Experienced Realtor
           </p>
           <h2
             className={inView ? "mb-xs animate delayShortest" : "mb-xs hidden"}

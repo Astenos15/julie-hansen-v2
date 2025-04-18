@@ -30,6 +30,24 @@ export const aboutUs = [
   },
 ];
 
+export const strategies = [
+  {
+    id: nanoid(),
+    title: "local Exposure",
+    text: "Through our partnership with Nextdoor—used in over 80% of U.S. and nearly all Bay Area —your home gets targeted local exposure. List with Hansen Partners and your home automatically appears on Nextdoor in your neighborhood.",
+  },
+  {
+    id: nanoid(),
+    title: "national Exposure",
+    text: "We secure strategic positioning and enhancement on Realtor.com, Trulia, and Zillow, driving more consumers to your home and increasing exposure. We will receive every inquiry about your property directly.",
+  },
+  {
+    id: nanoid(),
+    title: "international Exposure",
+    text: "We promote on prominent international real estate portals, including: Wall Street Journal, LuxuryPortfolio.com, LuxuryRealEstate.com, LeadingRE.com, UniqueHomes.com, China.apr.com, Caimeiju, Juwai, Country Life UK.",
+  },
+];
+
 export const communities = [
   {
     id: nanoid(),

@@ -8,6 +8,14 @@
     transform: translate(0);
   }
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 @keyframes alternateText {
   0% {
@@ -69,6 +77,10 @@
 }
 .animate-spinner {
   animation: moveInTop 1s linear, slowSpinner 5s linear infinite;
+  animation-fill-mode: backwards;
+}
+.animate-photo {
+  animation: fadeIn 1s linear;
   animation-fill-mode: backwards;
 }
 

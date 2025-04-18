@@ -1,0 +1,25 @@
+.section-strategy {
+  font-size: 1.8rem;
+  letter-spacing: 1.2px;
+  line-height: 1.8;
+
+  .title {
+    text-align: center;
+    h4 {
+      font-weight: 400;
+    }
+  }
+
+  &__grid {
+    gap: 2rem;
+    @include respond(phone) {
+      row-gap: 4rem;
+    }
+
+    &-item {
+      h4 {
+        text-transform: capitalize;
+      }
+    }
+  }
+}

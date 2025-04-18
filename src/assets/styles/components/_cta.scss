@@ -1,8 +1,8 @@
 .section-cta {
   color: var(--color-text-light);
+  background-color: var(--color-primary-dark);
   &__grid {
     &-item {
-      background-color: var(--color-primary-dark);
       img {
         width: 100%;
         filter: brightness(80%);
@@ -13,12 +13,12 @@
         line-height: 1;
         letter-spacing: -5px;
         @include respond(phone) {
-          font-size: 4.8rem;
+          font-size: 4rem;
           letter-spacing: -3px;
         }
       }
       h2 {
-        font-size: 4rem;
+        font-size: 2rem;
         font-weight: 400;
         color: #f7f7f7;
         @include respond(phone) {
@@ -36,6 +36,10 @@
         padding: 9.6rem;
         @include respond(phone) {
           padding: 9.6rem 4rem;
+        }
+
+        .link-btn {
+          padding: 1rem 2rem !important;
         }
       }
     }

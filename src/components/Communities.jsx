@@ -14,7 +14,7 @@ function Communities() {
   return (
     <div ref={ref} className="section-communities section-padding">
       <div className={inView ? "animate delayLong " : "hidden"}>
-        <p>Learn more about your desired area</p>
+        <p>Discover your desired area</p>
         <h2 className="mb-lg">Our Featured Communities</h2>
       </div>
 

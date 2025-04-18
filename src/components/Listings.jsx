@@ -15,12 +15,12 @@ function Listings() {
   }
 
   function handleToggle(itemId) {
-    setListIndex(itemId + 1);
+    setListIndex(itemId);
   }
 
   return (
     <div ref={ref} className="section-listings section-padding">
-      {listIndex ? (
+      {listIndex >= 0 ? (
         <ListingInfo listing={listing} onSet={setListIndex} />
       ) : (
         <div className="section-listings___box mb-lg">

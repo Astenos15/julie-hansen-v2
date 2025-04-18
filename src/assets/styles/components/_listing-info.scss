@@ -1,0 +1,75 @@
+.listing-info {
+  background-image: linear-gradient(
+    120deg,
+    rgba(245, 242, 237, 1) 0%,
+    rgba(245, 242, 237, 1) 50%,
+    #f7f7f7 50%
+  );
+  padding: 4rem;
+
+  .buttons {
+    display: flex;
+    gap: 2rem;
+    @include respond(phone) {
+      margin-bottom: 4rem;
+    }
+
+    button {
+      font-size: 1.8rem;
+      text-transform: capitalize;
+      padding: 2rem;
+    }
+  }
+  &__photo {
+    overflow: hidden;
+    img {
+      width: 100%;
+      transform: scale(1.2);
+    }
+  }
+
+  h3 {
+    text-transform: capitalize;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 3rem;
+  }
+
+  &__grid {
+    gap: 2rem;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      &-logo {
+        width: 4rem;
+      }
+      &-reg {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-top: auto;
+      }
+    }
+  }
+
+  .details {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    p {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-light);
+      padding: 1rem;
+      text-transform: capitalize;
+    }
+  }
+}

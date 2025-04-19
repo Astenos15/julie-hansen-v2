@@ -39,7 +39,12 @@ function Team() {
             industry.
           </p>
           <div className={inView ? "animate delayLong" : "hidden"}>
-            <LinkButton color="#fff" href="mailto:luxuryhomesinwc@icloud.com">
+            <LinkButton
+              color="#000"
+              bgColor="goldenrod"
+              borderColor="goldenrod"
+              href="mailto:luxuryhomesinwc@icloud.com"
+            >
               contact me
             </LinkButton>
           </div>

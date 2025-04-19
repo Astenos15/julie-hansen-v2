@@ -3,6 +3,8 @@
   line-height: 1.8;
   letter-spacing: 1.2px;
   column-gap: 2rem;
+  background-color: #fff;
+  color: var(--color-text-dark);
 
   @include respond(phone) {
     row-gap: 4rem;

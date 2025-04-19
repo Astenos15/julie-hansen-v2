@@ -1,4 +1,5 @@
 .section-testimonials {
+  color: var(--color-text-dark);
   @include respond(phone) {
     padding: 0;
   }
@@ -45,7 +46,12 @@
     padding: 8rem;
     font-size: 1.8rem;
     position: relative;
+    max-width: 80%;
+    margin: 0 auto;
 
+    @include respond(tab-port) {
+      max-width: 100%;
+    }
     @include respond(phone) {
       padding: 9.6rem 4rem;
     }

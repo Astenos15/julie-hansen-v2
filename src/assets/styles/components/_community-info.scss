@@ -1,6 +1,7 @@
 .community-info {
   font-size: 1.8rem;
   line-height: 2;
+  color: var(--color-text-dark);
   @include respond(phone) {
     padding-left: 2rem;
     padding-right: 2rem;

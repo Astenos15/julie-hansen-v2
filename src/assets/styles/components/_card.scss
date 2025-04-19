@@ -5,7 +5,8 @@
   letter-spacing: 1.2px;
   line-height: 1.8;
   transition: var(--transition);
-
+  color: var(--color-text-dark);
+  background-color: #fff;
   &:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-dark);

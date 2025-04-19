@@ -3,19 +3,37 @@ import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Card } from "./Card";
 import ListingInfo from "./ListingInfo";
+
 function Listings() {
   const { ref, inView } = useInView();
   const [area, setArea] = useState("livermore");
-  const results = listings.filter((item) => item.area === area).length;
   const [listIndex, setListIndex] = useState(null);
+  const [search, setSearch] = useState("");
+  const [value, setValue] = useState(null);
+  const searchedListing = listings.filter((item) =>
+    item.address.toLowerCase().includes(value?.toLowerCase())
+  );
   const listing = listings.filter((item) => item.id === listIndex);
+  const results = listings.filter((item) => item.area === area).length;
+  const searchedResults = searchedListing.length;
+  const total = results || searchedResults;
 
   function handleIndex(area) {
     setArea(area);
+    setValue(null);
   }
 
   function handleToggle(itemId) {
     setListIndex(itemId);
+    setValue(null);
+    setArea("livermore");
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setValue(search);
+    setSearch("");
+    setArea("");
   }
 
   return (
@@ -36,8 +54,18 @@ function Listings() {
             }
           >
             <h2>Real Estate & Homes for Sale</h2>
-            <input type="search" placeholder="search address" />
-            <p>{results} results</p>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="search"
+                placeholder="search address"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                required
+              />
+              <button>search</button>
+            </form>
+
+            <p>{total} results</p>
           </div>
           <div
             className={
@@ -66,11 +94,15 @@ function Listings() {
                 : "section-listings__grid grid grid-3-cols hidden"
             }
           >
-            {listings
-              .filter((item) => item.area === area)
-              .map((item) => (
-                <Card onClick={handleToggle} key={item.id} item={item} />
-              ))}
+            {value
+              ? searchedListing.map((item) => (
+                  <Card onClick={handleToggle} key={item.id} item={item} />
+                ))
+              : listings
+                  .filter((item) => item.area === area)
+                  .map((item) => (
+                    <Card onClick={handleToggle} key={item.id} item={item} />
+                  ))}
           </div>
         </div>
       )}

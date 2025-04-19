@@ -5,13 +5,13 @@ import { Card } from "./Card";
 import ListingInfo from "./ListingInfo";
 function Listings() {
   const { ref, inView } = useInView();
-  const [index, setIndex] = useState("livermore");
-  const results = listings.filter((item) => item.area === index).length;
+  const [area, setArea] = useState("livermore");
+  const results = listings.filter((item) => item.area === area).length;
   const [listIndex, setListIndex] = useState(null);
-  const listing = listings[listIndex];
+  const listing = listings.filter((item) => item.id === listIndex);
 
   function handleIndex(area) {
-    setIndex(area);
+    setArea(area);
   }
 
   function handleToggle(itemId) {
@@ -19,7 +19,11 @@ function Listings() {
   }
 
   return (
-    <div ref={ref} className="section-listings section-padding">
+    <div
+      id="section-listings"
+      ref={ref}
+      className="section-listings section-padding"
+    >
       {listIndex ? (
         <ListingInfo listing={listing} onSet={setListIndex} />
       ) : (
@@ -45,7 +49,7 @@ function Listings() {
             <ul className={inView ? "mb-lg animate delayLong" : "mb-lg hidden"}>
               {communities.map((item) => (
                 <button
-                  className={item.title === index ? "btn-active" : ""}
+                  className={item.title === area ? "btn-active" : ""}
                   key={item.id}
                   onClick={() => handleIndex(item.title)}
                 >
@@ -62,17 +66,11 @@ function Listings() {
                 : "section-listings__grid grid grid-3-cols hidden"
             }
           >
-            {listings.map(
-              (item, i) =>
-                item.area === index && (
-                  <Card
-                    onClick={handleToggle}
-                    key={item.id}
-                    i={i}
-                    item={item}
-                  />
-                )
-            )}
+            {listings
+              .filter((item) => item.area === area)
+              .map((item) => (
+                <Card onClick={handleToggle} key={item.id} item={item} />
+              ))}
           </div>
         </div>
       )}

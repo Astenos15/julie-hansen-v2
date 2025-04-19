@@ -2,6 +2,7 @@ import LinkButton from "./LinkButton";
 import { useInView } from "react-intersection-observer";
 export default function ListingInfo({ listing, onSet }) {
   const { ref, inView } = useInView();
+
   function handleSet() {
     onSet(null);
   }
@@ -15,23 +16,25 @@ export default function ListingInfo({ listing, onSet }) {
         }
       >
         <div className="listing-info__photo">
-          <img src={listing.img} alt="house photo" />
+          <img src={listing.at(0).img} alt="house photo" />
         </div>
 
-        <p className="listing-info__price">${listing.price}</p>
-        <p className="listing-info__address mb-sm">{listing.address}</p>
+        <p className="listing-info__price">
+          ${listing.at(0).price.toLocaleString()}
+        </p>
+        <p className="listing-info__address mb-sm">{listing.at(0).address}</p>
         <div className="details">
           <p>
-            per sqft: <span>{listing.perSqft}</span>
+            per sqft: <span>{listing.at(0).perSqft}</span>
           </p>
           <p>
-            built in: <span>{listing.builtIn}</span>
+            built in: <span>{listing.at(0).builtIn}</span>
           </p>
           <p>
-            garages: <span>{listing.garages}</span>
+            garages: <span>{listing.at(0).garages}</span>
           </p>
           <p>
-            type: <span>{listing.type}</span>
+            type: <span>{listing.at(0).type}</span>
           </p>
         </div>
       </div>
@@ -44,11 +47,17 @@ export default function ListingInfo({ listing, onSet }) {
         }
       >
         <h3>interior features</h3>
-        <p className="mb-sm">{listing.interior.map((item) => `${item},`)}</p>
+        <p className="mb-sm">
+          {listing.at(0).interior.map((item) => `${item},`)}
+        </p>
         <h3>exterior features</h3>
-        <p className="mb-sm">{listing.exterior.map((item) => `${item},`)}</p>
+        <p className="mb-sm">
+          {listing.at(0).exterior.map((item) => `${item},`)}
+        </p>
         <h3>parking</h3>
-        <p className="mb-sm">{listing.parking.map((item) => `${item},`)}</p>
+        <p className="mb-sm">
+          {listing.at(0).parking.map((item) => `${item},`)}
+        </p>
         <div className="buttons">
           <LinkButton color="#fff" href="mailto:#">
             contact agent
@@ -62,7 +71,7 @@ export default function ListingInfo({ listing, onSet }) {
             src="https://res.cloudinary.com/luxuryp/images/f_auto,q_auto/krxcekotrcfbsc76fdbi/2024-idx-logo_bayeast"
             alt="logo"
           />
-          <p>MLS@reg # {listing.mls}</p>
+          <p>MLS@reg # {listing.at(0).mls}</p>
         </div>
       </div>
     </div>

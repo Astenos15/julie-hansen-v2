@@ -1,82 +1,89 @@
 .section-communities {
-  display: flex;
-  flex-direction: column;
-  // align-items: center;
-  justify-content: center;
-
-  h2 {
-    font-size: 3rem;
-    // @include respond(phone) {
-    //   margin-bottom: 4rem !important;
-    // }
-  }
-  h3 {
-    font-size: 2.8rem;
-    text-transform: capitalize;
-
-    @include respond(phone) {
-      margin-bottom: 1rem !important;
-    }
-  }
-
-  p {
+  &__title {
     font-size: 1.8rem;
     letter-spacing: 1.2px;
-    line-height: 1.8;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    order: 2;
-
-    @include respond(tab-port) {
-      height: 40rem;
-      order: 1;
-    }
-  }
-  &__text-box {
-    order: 1;
-    @include respond(tab-port) {
-      order: 2;
-    }
-  }
-
-  &__grid {
-    gap: 2rem;
-  }
-
-  &__subtitle {
-    font-size: 1.8rem;
-  }
-
-  &__btn-box {
+    background-image: linear-gradient(
+      120deg,
+      rgba(245, 242, 237, 1) 0%,
+      rgba(245, 242, 237, 1) 50%,
+      #f7f7f7 50%
+    );
+    height: 40rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-  }
 
-  &__btn {
-    list-style: none;
-    border: 1px solid var(--color-primary-dark);
-    background: none;
-    border-radius: 100px;
-    color: var(--color-text-dark);
-    display: inline-block;
-    padding: 1rem 4rem;
-    text-transform: capitalize;
-    transition: var(--transition);
-    cursor: pointer;
+    h2,
+    h3 {
+      text-transform: capitalize;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+    h3 {
+      font-weight: 400;
+      font-size: 1.8rem;
+    }
   }
+  &__grid {
+    &-item {
+      height: 40rem;
+      position: relative;
+      color: var(--color-text-light);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: brightness(70%);
+        z-index: 500;
+      }
+      .text-box {
+        display: inline-block;
+        text-align: center;
+        z-index: 1000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
-  &__text {
-    display: flex;
-    gap: 2rem;
-  }
+        h2 {
+          font-size: 8rem;
+          text-transform: capitalize;
+          font-weight: 200;
+        }
 
-  .active-btn {
-    background-color: var(--color-primary-dark);
-    color: var(--color-text-light);
+        button {
+          border: 1px solid var(--color-text-light);
+          background: transparent;
+          color: var(--color-text-light);
+          text-transform: capitalize;
+          font-size: 2rem;
+          padding: 1rem 4rem;
+          letter-spacing: 1.2px;
+          cursor: pointer;
+          background: linear-gradient(
+            120deg,
+            transparent 0%,
+            transparent 50%,
+            var(--color-text-light) 50%
+          );
+          background-size: 220%;
+          transition: var(--transition);
+
+          &:hover {
+            color: var(--color-text-dark);
+            transform: translateY(-4px);
+            background-position: 100%;
+            box-shadow: var(--shadow-dark);
+          }
+          &:active {
+            transform: translateY(0);
+            box-shadow: var(--shadow-light);
+          }
+        }
+      }
+    }
   }
 }

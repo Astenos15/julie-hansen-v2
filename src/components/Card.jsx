@@ -1,6 +1,6 @@
-export function Card({ item, onClick, i }) {
+export function Card({ item, onClick }) {
   return (
-    <div className="card" onClick={() => onClick(i)}>
+    <div className="card" onClick={() => onClick(item.id)}>
       <div className="card__img-box">
         <img src={item.img} alt="house listing" />
       </div>

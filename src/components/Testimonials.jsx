@@ -17,7 +17,10 @@ function Testimonials() {
   }
 
   return (
-    <div className="section-testimonials section-padding">
+    <div
+      id="section-testimonials"
+      className="section-testimonials section-padding"
+    >
       <div ref={ref} className="section-testimonials__box">
         <p
           className={

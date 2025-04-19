@@ -2,7 +2,7 @@ import { useInView } from "react-intersection-observer";
 function About({ about }) {
   const { ref, inView } = useInView();
   return (
-    <li ref={ref} className="section-about__list-item">
+    <li id="section-about" ref={ref} className="section-about__list-item">
       <span className={inView ? "animate delayShortest mb-xs" : "mb-xs hidden"}>
         {about.icon}
       </span>

@@ -34,7 +34,11 @@ function Hero() {
               : "section-hero__btn-box hidden"
           }
         >
-          <LinkButton bgColor="transparent" borderColor="#fff">
+          <LinkButton
+            bgColor="transparent"
+            borderColor="#fff"
+            href="#section-listings"
+          >
             search for homes
           </LinkButton>
           <LinkButton
